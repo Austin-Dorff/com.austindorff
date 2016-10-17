@@ -1,0 +1,27 @@
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Manhattan_Beach_Pier_at_sunset%2C_with_the_sun_behind_the_roundhouse_at_pier%27s_end.jpg/1600px-Manhattan_Beach_Pier_at_sunset%2C_with_the_sun_behind_the_roundhouse_at_pier%27s_end.jpg");
+  background-size: cover;
+}
+
+div.container > div.jumbotron.welcome > h1, p {
+  text-align: center;
+  color: Black;
+}
+
+div.container > div.jumbotron.welcome {
+  border-radius: 5%;
+  width: 75%;
+  margin-left: 12.5%;
+  border: 2px solid Black;
+}
+
+div.container > div.jumbotron.welcome > img {
+  width: 256px;
+  height: 256px;
+  border-radius: 25%;
+  border: 2px solid Black;
+}
+
+div.container > div.jumbotron.welcome > p.slightly-smaller {
+  font-size: 0.96em;
+}

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get '/about' => 'welcome#about'
 
-  get '/contact' => 'welcome#contact'
+  get '/contact' => 'contact#new'
+
+  get '/thankyou' => 'contact#sent'
 
   get '/projects' => 'projects#index'
 
@@ -12,6 +14,10 @@ Rails.application.routes.draw do
 
   get '/project/triple-a-battle-calc' => 'projects#triplea'
 
-  get '/project/relational-tones-v2' => 'projects#relationaltones'
+  get '/project/relational-tones' => 'projects#relationaltones'
+
+  get '/project/mechanica' => 'projects#mechanica'
+
+  match '/send_mail', to: 'contact#send_mail', via: 'post'
 
 end

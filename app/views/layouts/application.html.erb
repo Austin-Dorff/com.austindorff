@@ -16,27 +16,52 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Austin Dorff</a>
+            <a class="navbar-brand" href="/">Austin Charles Dorff</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><%= link_to 'Home', '/'%></li>
+              <li><%= link_to 'About Me', '/about' %></li>
+              <li><%= link_to 'Contact Me', '/contact' %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/projects">Complete List Of Projects</a></li>
-                  <li><a href="/project/stack-overflow-clone">Stack Overflow Clone</a></li>
-                  <li><a href="/project/triple-a-battle-calc">Axis And Allies Board Game Battle Calculator</a></li>
-                  <li><a href="/project/relational-tones-v2">Relational Tones v2.0</a></li>
-                  <li><a href="/project/mechanica">Mechanica</a></li>
+                  <li><%= link_to 'Complete List Of Projects', '/projects' %></li>
+                  <li><%= link_to 'Stack Overflow Clone', '/project/stack-overflow-clone'%></li>
+                  <li><%= link_to 'Axis And Allies Battle Calculator', '/project/triple-a-battle-calc'%></li>
+                  <li><%= link_to 'Relational Tones v2.0', '/project/relational-tones'%></li>
+                  <li><%= link_to 'Mechanica - The Minecraft Mod', '/project/mechanica'%></li>
                 </ul>
               </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+      <script>
+        $(document).ready(function () {
+            var location = window.location.pathname;
+            if (location === "/" || location === "") {
+                $("nav div#navbar ul.nav > li:nth-child(1)").addClass("active")
+            } else if (location === "/about") {
+                $("nav div#navbar ul.nav > li:nth-child(2)").addClass("active")
+            } else if (location === "/contact") {
+                $("nav div#navbar ul.nav > li:nth-child(3)").addClass("active")
+            } else if (location.substring(0, 8) === "/project") {
+                $("nav div#navbar ul.nav > li:nth-child(4)").addClass("active")
+                if (location.substr(8) === "s") {
+                    $("#navbar > ul > li.dropdown > ul > li:nth-child(1)").addClass("active")
+                } else if (location.substr(8) === "/stack-overflow-clone") {
+                    $("#navbar > ul > li.dropdown > ul > li:nth-child(2)").addClass("active")
+                } else if (location.substr(8) === "/triple-a-battle-calc") {
+                    $("#navbar > ul > li.dropdown > ul > li:nth-child(3)").addClass("active")
+                } else if (location.substr(8) === "/relational-tones") {
+                    $("#navbar > ul > li.dropdown > ul > li:nth-child(4)").addClass("active")
+                } else if (location.substr(8) === "/mechanica") {
+                   $("#navbar > ul > li.dropdown > ul > li:nth-child(5)").addClass("active")
+                }
+            }
+        });
+      </script>
     <%= yield %>
   </body>
 </html>

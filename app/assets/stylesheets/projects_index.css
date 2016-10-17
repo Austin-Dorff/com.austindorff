@@ -1,0 +1,15 @@
+.project {
+  width: 50%;
+  background: White;
+  border: 2px black solid;
+  border-radius: 2%;
+  margin: 10px auto;
+}
+
+.project * {
+  text-align: center;
+}
+
+.container > a > * {
+  text-decoration: none;
+}
